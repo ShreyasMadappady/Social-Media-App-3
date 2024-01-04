@@ -1,9 +1,5 @@
 function loginPage() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div></div>;
 }
 
-export default loginPage
+export default loginPage;
