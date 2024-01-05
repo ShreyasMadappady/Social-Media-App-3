@@ -7,6 +7,7 @@ body,
   /* height: 100%;
   width: 100%; */
   font-family: "Rubik", sans-serif;
+  background-color: rgba(238, 234, 227, 0.562);
 }
 @tailwind base;
 @tailwind components;
