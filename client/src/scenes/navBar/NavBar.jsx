@@ -61,7 +61,7 @@ function navBar() {
               console.log(e.target.value);
             }}
           >
-            <option value="user">UserName</option>
+            <option value="user">Shreyas</option>
             <option value="log">Logout</option>
           </select>
         </div>
