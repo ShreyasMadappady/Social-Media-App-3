@@ -4,11 +4,11 @@ html,
 body,
 #root,
 .app {
-  /* height: 100%;
-  width: 100%; */
   font-family: "Rubik", sans-serif;
-  background-color: rgba(238, 234, 227, 0.562);
+  background-color: rgba(238, 234, 227, 0.215);
+  color: rgba(0, 0, 0, 0.815);
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

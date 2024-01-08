@@ -7,7 +7,7 @@ import profilePage from "./scenes/profilePage/ProfilePage";
 
 function App() {
   return (
-    <div className="app">
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" Component={loginPage} />

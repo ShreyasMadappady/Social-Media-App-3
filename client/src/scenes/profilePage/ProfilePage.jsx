@@ -1,5 +1,9 @@
-function profilePage() {
-  return <div></div>;
+function ProfilePage() {
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
-export default profilePage;
+export default ProfilePage

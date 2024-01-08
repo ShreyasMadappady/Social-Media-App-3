@@ -1,4 +1,4 @@
-function navBar() {
+function NavBar() {
   return (
     <div className="flex justify-between py-6 px-20 bg-white">
       <div className="flex gap-9">
@@ -70,4 +70,4 @@ function navBar() {
   );
 }
 
-export default navBar;
+export default NavBar;
