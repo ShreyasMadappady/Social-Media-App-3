@@ -1,8 +1,12 @@
 function loginPage() {
+
+
+
+  
   return (
     <div>
       <h1 className="text-cyan-500 font-bold text-2xl flex justify-center bg-white py-4 ">
-        Sociodia
+        Sociopedia
       </h1>
       {/* <div className="flex justify-center flex-col w-3/6 mx-auto bg-white p-5 my-6 rounded-xl">
         <h1 className=" text-black font-medium">

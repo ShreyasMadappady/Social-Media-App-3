@@ -3,7 +3,7 @@ import img2 from "../assets/man.jpg";
 
 function Posts() {
   return (
-    <div className="bg-white w-7/12 h-full pt-6 mt-6 px-6 rounded-xl text-gray-600">
+    <div className="bg-white  h-full pt-6 mt-6 px-6 rounded-xl text-gray-600">
       <div className="flex items-center gap-4 justify-between  pb-4">
         <div className="flex items-center gap-4">
           <img

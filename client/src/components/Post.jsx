@@ -2,7 +2,7 @@ import img from "../assets/OIP.jpg";
 
 function Post() {
   return (
-    <div className="bg-white w-7/12 h-5/12 pt-6 mt-6  rounded-xl text-gray-600">
+    <div className="bg-white  h-5/12 pt-6 mt-6 rounded-xl text-gray-600">
       <div className="flex items-center gap-6 px-6 pb-4 border-solid border-gray-300 border-b justify-between">
         <img
           className="w-12 h-12 object-cover rounded-full "

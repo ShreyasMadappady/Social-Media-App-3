@@ -4,7 +4,7 @@ import linkedin from "../assets/linkedin.png";
 
 function Profile() {
   return (
-    <div className="bg-white w-3/12 py-6 my-6 mx-20 rounded-xl">
+    <div className="bg-white  py-6 my-6 rounded-xl">
       <div className="flex items-center px-4 pb-4  justify-between border-solid border-gray-300 border-b">
         <div className="flex items-center gap-4">
           <img
@@ -14,7 +14,7 @@ function Profile() {
           />
           <div>
             <h1 className="font-medium">Shreyas M S</h1>
-            <h2 className="text-xs">0 Friends</h2>
+            <h2 className="text-xs text-gray-500">0 Friends</h2>
           </div>
         </div>
         <svg
