@@ -1,4 +1,5 @@
 import Post from "../../components/Post";
+import Posts from "../../components/Posts";
 import Profile from "../../components/Profile";
 import NavBar from "../navBar/NavBar";
 
@@ -8,7 +9,11 @@ function HomePage() {
       <NavBar />
       <div className="flex">
         <Profile />
-        <Post />
+        <div className="flex flex-col">
+          {" "}
+          <Post />
+          <Posts />
+        </div>
       </div>
     </div>
   );

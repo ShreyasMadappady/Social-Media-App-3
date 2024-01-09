@@ -4,10 +4,7 @@ import linkedin from "../assets/linkedin.png";
 
 function Profile() {
   return (
-    <div
-      className="bg-white
-    w-3/12 py-6 my-6 mx-20 rounded-lg"
-    >
+    <div className="bg-white w-3/12 py-6 my-6 mx-20 rounded-xl">
       <div className="flex items-center px-4 pb-4  justify-between border-solid border-gray-300 border-b">
         <div className="flex items-center gap-4">
           <img
