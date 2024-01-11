@@ -1,30 +1,22 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function LoginPage() {
   const navigate = useNavigate();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [picturePath, setPicturePath] = useState("");
-  const [location, setLocation] = useState("");
-  const [occupation, setOccupation] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const formData = { email, password };
 
-  console.log(
-    firstName,
-    lastName,
-    location,
-    occupation,
-    email,
-    password,
-    picturePath
-  );
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
+    const loginData = await axios.post(
+      "http://localhost:3001/auth/login",
+      formData
+    );
+    const dat = await loginData.datal
+    console.log(dat)
   };
 
   return (
@@ -52,7 +44,10 @@ function LoginPage() {
             setPassword(e.target.value);
           }}
         />
-        <button className="bg-cyan-500 text-white py-3 rounded-md">
+        <button
+          className="bg-cyan-500 text-white py-3 rounded-md"
+          onClick={handleSubmit}
+        >
           Login
         </button>
         <h2

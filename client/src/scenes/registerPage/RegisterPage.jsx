@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -11,19 +12,28 @@ function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log(
+  let formData = {
     firstName,
     lastName,
-    location,
-    occupation,
     email,
     password,
-    picturePath
-  );
+    picturePath,
+    friends: 1,
+    location,
+    occupation,
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
+    console.log("hello");
+    const setData = await axios.post(
+      "http://localhost:3001/auth/register",
+      formData
+    );
+    if (setData) {
+      navigate("/");
+    }
+    console.log(setData);
   };
 
   return (
@@ -60,7 +70,7 @@ function RegisterPage() {
           type="file"
           placeholder="Add picture here"
           onChange={(e) => {
-            setLastName(e.target.value);
+            setPicturePath(e.target.value);
           }}
         />{" "}
         <input
@@ -95,7 +105,10 @@ function RegisterPage() {
             setPassword(e.target.value);
           }}
         />
-        <button className="bg-cyan-500 text-white py-3 rounded-md">
+        <button
+          className="bg-cyan-500 text-white py-3 rounded-md"
+          onClick={handleSubmit}
+        >
           Register
         </button>
         <h2
