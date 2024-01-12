@@ -3,8 +3,16 @@ import Post from "../../components/Post";
 import Posts from "../../components/Posts";
 import Profile from "../../components/Profile";
 import NavBar from "../navBar/NavBar";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function HomePage() {
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts);
+  const token = useSelector((state) => state.token);
+  const { _id, picturePath } = useSelector((state) => state.user);
+  useSelector((state) => console.log(state.user));
+
   return (
     <div>
       <NavBar />

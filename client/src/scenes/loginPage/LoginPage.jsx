@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../../state/index.js";
 
 function LoginPage() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -11,12 +14,21 @@ function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const loginData = await axios.post(
-      "http://localhost:3001/auth/login",
-      formData
-    );
-    const dat = await loginData.datal
-    console.log(dat)
+    await axios
+      .post("http://localhost:3001/auth/login", formData)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data) {
+          dispatch(
+            setLogin({
+              user: response.data.user,
+              token: response.data.token,
+            })
+          );
+          navigate("/home");
+        }
+      })
+      .catch((error) => console.error("Error:", error));
   };
 
   return (
