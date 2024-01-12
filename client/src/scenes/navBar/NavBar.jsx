@@ -1,4 +1,4 @@
-function NavBar() {
+function NavBar({ userName }) {
   return (
     <div className="flex justify-between py-6 px-20 bg-white">
       <div className="flex gap-9">
@@ -61,7 +61,7 @@ function NavBar() {
               console.log(e.target.value);
             }}
           >
-            <option value="user">Shreyas</option>
+            <option value="user">{userName}</option>
             <option value="log">Logout</option>
           </select>
         </div>

@@ -2,7 +2,7 @@ import img from "../assets/OIP.jpg";
 import twitter from "../assets/twitter.png";
 import linkedin from "../assets/linkedin.png";
 
-function Profile() {
+function Profile({ user }) {
   return (
     <div className="bg-white  py-6 my-6 rounded-xl">
       <div className="flex items-center px-4 pb-4  justify-between border-solid border-gray-300 border-b">
@@ -13,8 +13,8 @@ function Profile() {
             alt=""
           />
           <div>
-            <h1 className="font-medium">Shreyas M S</h1>
-            <h2 className="text-xs text-gray-500">0 Friends</h2>
+            <h1 className="font-medium">{`${user.firstName} ${user.lastName}`}</h1>
+            <h2 className="text-xs text-gray-500">{`${user.friends}`} Friends</h2>
           </div>
         </div>
         <svg
@@ -41,7 +41,7 @@ function Profile() {
           >
             <path d="M128,16a88.1,88.1,0,0,0-88,88c0,75.3,80,132.17,83.41,134.55a8,8,0,0,0,9.18,0C136,236.17,216,179.3,216,104A88.1,88.1,0,0,0,128,16Zm0,56a32,32,0,1,1-32,32A32,32,0,0,1,128,72Z"></path>
           </svg>
-          <h1 className="text-sm text-gray-500">fake Location</h1>
+          <h1 className="text-sm text-gray-500">{user.location}</h1>
         </div>
         <div className="flex items-center px-4 pb-4 gap-4">
           <svg
@@ -54,7 +54,7 @@ function Profile() {
           >
             <path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v72H40V72Z"></path>
           </svg>
-          <h1 className="text-sm text-gray-500">fake Occupation</h1>
+          <h1 className="text-sm text-gray-500">{user.occupation}</h1>
         </div>
       </div>
       <div className="border-solid border-gray-300 border-b">

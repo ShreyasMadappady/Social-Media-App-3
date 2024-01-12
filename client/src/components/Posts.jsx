@@ -1,7 +1,25 @@
+import { useEffect } from "react";
 import img from "../assets/OIP.jpg";
 import img2 from "../assets/man.jpg";
+import axios from "axios";
 
 function Posts() {
+  let postData = {};
+  useEffect(() => {
+    async () => {
+      await axios
+        .get("http://localhost:3001/posts/", {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+  }, []);
+
   return (
     <div className="bg-white  h-full pt-6 mt-6 px-6 rounded-xl text-gray-600">
       <div className="flex items-center gap-4 justify-between  pb-4">
