@@ -18,7 +18,7 @@ function HomePage() {
           <Profile user={user} />
         </div>
 
-        <div className="flex flex-col w-7/12">
+        <div className="flex flex-col w-7/12 overflow-scroll h-screen ">
           <Post />
           <Posts token={token} />
         </div>
