@@ -30,9 +30,9 @@ function RegisterPage() {
       "http://localhost:3001/auth/register",
       formData
     );
-    // if (setData) {
-    //   navigate("/");
-    // }
+    if (setData) {
+      navigate("/");
+    }
     // console.log(setData);
   };
 
