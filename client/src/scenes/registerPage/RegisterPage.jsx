@@ -25,15 +25,15 @@ function RegisterPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("hello");
+
     const setData = await axios.post(
       "http://localhost:3001/auth/register",
       formData
     );
-    if (setData) {
-      navigate("/");
-    }
-    console.log(setData);
+    // if (setData) {
+    //   navigate("/");
+    // }
+    // console.log(setData);
   };
 
   return (
@@ -45,6 +45,7 @@ function RegisterPage() {
       <form
         onSubmit={handleSubmit}
         className="flex justify-center flex-col w-3/6 mx-auto bg-white p-5 my-6 rounded-xl"
+        encType="multipart/form-data"
       >
         <h1 className=" text-black font-medium">
           Welcome to Sociopedia, the Social Media for Sociopath

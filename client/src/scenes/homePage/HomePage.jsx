@@ -1,18 +1,13 @@
-import { useEffect } from "react";
 import FriendList from "../../components/FriendList";
 import Post from "../../components/Post";
 import Posts from "../../components/Posts";
 import Profile from "../../components/Profile";
 import NavBar from "../navBar/NavBar";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import axios from "axios";
 
 function HomePage() {
   const token = useSelector((state) => state.token);
   const user = useSelector((state) => state.user);
-
-  
 
   return (
     <div>
@@ -25,7 +20,7 @@ function HomePage() {
 
         <div className="flex flex-col w-7/12">
           <Post />
-          <Posts />
+          <Posts token={token} />
         </div>
         <div className="w-4/12">
           {" "}

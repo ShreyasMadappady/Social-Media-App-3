@@ -2,22 +2,30 @@ import { useEffect } from "react";
 import img from "../assets/OIP.jpg";
 import img2 from "../assets/man.jpg";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setPosts } from "../state";
 
-function Posts() {
-  let postData = {};
+let postsData = {};
+
+function Posts({ token }) {
+  const dispatch = useDispatch();
+
+  const getPost = async () => {
+    await axios
+      .get("http://localhost:3001/posts/", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        console.log(response.data);
+        postsData = response.data;
+        dispatch(setPosts({ posts: response.data }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   useEffect(() => {
-    async () => {
-      await axios
-        .get("http://localhost:3001/posts/", {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
+    getPost();
   }, []);
 
   return (
