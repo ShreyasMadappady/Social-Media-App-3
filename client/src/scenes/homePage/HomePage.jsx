@@ -1,13 +1,39 @@
+import { useEffect } from "react";
 import FriendList from "../../components/FriendList";
 import Post from "../../components/Post";
 import Posts from "../../components/Posts";
 import Profile from "../../components/Profile";
 import NavBar from "../navBar/NavBar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setPosts } from "../../state";
+import axios from "axios";
 
 function HomePage() {
   const token = useSelector((state) => state.token);
   const user = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+
+  const getPost = async () => {
+    await axios
+      .get("http://localhost:3001/posts/", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        console.log(response.data);
+        dispatch(setPosts({ posts: response.data }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getPost();
+  }, []);
+
+  const PostData = useSelector((state) => state.posts);
+
 
   return (
     <div>
@@ -20,7 +46,7 @@ function HomePage() {
 
         <div className="flex flex-col w-7/12 overflow-scroll h-screen ">
           <Post />
-          <Posts token={token} />
+          <Posts PostData={PostData} />
         </div>
         <div className="w-4/12">
           {" "}

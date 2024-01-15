@@ -1,20 +1,28 @@
 import img from "../assets/OIP.jpg";
 import twitter from "../assets/twitter.png";
 import linkedin from "../assets/linkedin.png";
+import { useNavigate } from "react-router-dom";
 
 function Profile({ user }) {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/profile/${user._id}`);
+  };
+
   return (
     <div className="bg-white  py-6 my-6 rounded-xl">
       <div className="flex items-center px-4 pb-4  justify-between border-solid border-gray-300 border-b">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4" onClick={handleClick}>
           <img
             className="w-10 h-10 object-cover rounded-full"
-            src={img}
+            src={`http://localhost:3001/assets/${user.picturePath}`}
             alt=""
           />
           <div>
             <h1 className="font-medium">{`${user.firstName} ${user.lastName}`}</h1>
-            <h2 className="text-xs text-gray-500">{`${user.friends}`} Friends</h2>
+            <h2 className="text-xs text-gray-500">
+              {`${user.friends}`} Friends
+            </h2>
           </div>
         </div>
         <svg

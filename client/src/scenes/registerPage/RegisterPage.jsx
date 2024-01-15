@@ -6,24 +6,25 @@ function RegisterPage() {
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [picturePath, setPicturePath] = useState("");
+  const [picturePath, setPicturePath] = useState(null);
   const [location, setLocation] = useState("");
   const [occupation, setOccupation] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let formData = {
-    firstName,
-    lastName,
-    email,
-    password,
-    picturePath,
-    friends: 1,
-    location,
-    occupation,
-  };
-
   const handleSubmit = async (e) => {
+    const formData = new FormData();
+    formData.append("firstName", firstName);
+    formData.append("lastName", lastName);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("picturePath", picturePath);
+    formData.append("friends", [1]);
+    formData.append("location", location);
+    formData.append("occupation", occupation);
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ", " + pair[1]);
+    }
     e.preventDefault();
 
     const setData = await axios.post(
@@ -71,7 +72,8 @@ function RegisterPage() {
           type="file"
           placeholder="Add picture here"
           onChange={(e) => {
-            setPicturePath(e.target.value);
+            setPicturePath(e.target.files[0]);
+            console.log(e.target.files[0]);
           }}
         />{" "}
         <input

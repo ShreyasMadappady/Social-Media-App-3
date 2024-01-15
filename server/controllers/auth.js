@@ -4,17 +4,14 @@ import User from "../models/User.js";
 
 // REGISTER USER
 export const register = async (req, res) => {
-  console.log("HEllooo")
-  console.log(req.body);
-  console.log(req.file);
   try {
     const {
       firstName,
       lastName,
       email,
       password,
-      picturePath,
       friends,
+
       location,
       occupation,
     } = req.body;
@@ -27,7 +24,7 @@ export const register = async (req, res) => {
       lastName,
       email,
       password: passwordHash,
-      picturePath,
+      picturePath: req.file.filename,
       friends,
       location,
       occupation,

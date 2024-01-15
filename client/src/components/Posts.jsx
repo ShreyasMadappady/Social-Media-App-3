@@ -5,29 +5,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../state";
 
-function Posts({ token }) {
-  const dispatch = useDispatch();
-
-  const getPost = async () => {
-    await axios
-      .get("http://localhost:3001/posts/", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        console.log(response.data);
-        dispatch(setPosts({ posts: response.data }));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  useEffect(() => {
-    getPost();
-  }, []);
-
-  const PostData = useSelector((state) => state.posts);
-  console.log(PostData);
-
+function Posts({ PostData }) {
   return (
     <>
       {PostData.map((data) => {
@@ -40,7 +18,7 @@ function Posts({ token }) {
               <div className="flex items-center gap-4">
                 <img
                   className="w-10 h-10 object-cover rounded-full"
-                  src={img}
+                  src={`http://localhost:3001/assets/${data.userPicturePath}`}
                   alt=""
                 />
                 <div>

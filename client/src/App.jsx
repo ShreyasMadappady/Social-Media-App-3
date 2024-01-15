@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import profilePage from "./scenes/profilePage/ProfilePage";
+import ProfilePage from "./scenes/profilePage/ProfilePage";
 import LoginPage from "./scenes/loginPage/LoginPage";
 import RegisterPage from "./scenes/registerPage/RegisterPage";
-import HomePage from "./scenes/homePage/HomePage"
-
-
+import HomePage from "./scenes/homePage/HomePage";
 
 function App() {
   return (
@@ -14,7 +12,7 @@ function App() {
           <Route path="/" Component={LoginPage} />
           <Route path="/register" Component={RegisterPage} />
           <Route path="/home" Component={HomePage} />
-          <Route path="/profile/:userId" Component={profilePage} />
+          <Route path="/profile/:userId" Component={ProfilePage} />
         </Routes>
       </BrowserRouter>
     </div>
