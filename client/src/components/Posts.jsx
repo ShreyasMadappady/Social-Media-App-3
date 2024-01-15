@@ -1,10 +1,3 @@
-import { useEffect } from "react";
-import img from "../assets/OIP.jpg";
-import img2 from "../assets/man.jpg";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "../state";
-
 function Posts({ PostData }) {
   return (
     <>

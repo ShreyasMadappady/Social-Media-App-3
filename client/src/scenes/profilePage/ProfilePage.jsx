@@ -6,22 +6,25 @@ import Profile from "../../components/Profile";
 import NavBar from "../navBar/NavBar";
 import axios from "axios";
 import { setPosts } from "../../state";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function ProfilePage() {
   const user = useSelector((state) => state.user);
-  console.log(user);
+  const token = useSelector((state) => state.token);
 
-  const dispatch = useDispatch();
+  let PostData = [];
+  let { id } = useParams();
 
   // router.get("/userId/posts", verifyToken, getUserPosts);
-  const getPost = async () => {
+  const getPosts = async () => {
     await axios
-      .get("http://localhost:3001/posts/", {
+      .get(`http://localhost:3001/${id}/posts`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
         console.log(response.data);
-        dispatch(setPosts({ posts: response.data }));
+        PostData = response.data;
       })
       .catch((error) => {
         console.log(error);
@@ -29,9 +32,8 @@ function ProfilePage() {
   };
 
   useEffect(() => {
-    getPost();
+    getPosts();
   }, []);
-
 
   return (
     <div>
@@ -43,7 +45,7 @@ function ProfilePage() {
         </div>
         <div className="w-10/12">
           <Post />
-          <Posts />
+          <Posts PostData={PostData} />
         </div>
       </div>
     </div>
