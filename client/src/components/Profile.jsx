@@ -10,7 +10,7 @@ function Profile({ user }) {
   };
 
   return (
-    <div className="bg-white  py-6 my-6 rounded-xl">
+    <div className="bg-slate-950  py-6 my-6 rounded-xl ">
       <div className="flex items-center px-4 pb-4  justify-between border-solid border-gray-300 border-b">
         <div className="flex items-center gap-4" onClick={handleClick}>
           <img
@@ -19,7 +19,7 @@ function Profile({ user }) {
             alt=""
           />
           <div>
-            <h1 className="font-medium">{`${user.firstName} ${user.lastName}`}</h1>
+            <h1 className="font-medium text-white">{`${user.firstName} ${user.lastName}`}</h1>
             <h2 className="text-xs text-gray-500">
               {`${user.friends}`} Friends
             </h2>
@@ -29,7 +29,7 @@ function Profile({ user }) {
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
-          fill="#000000"
+          fill="#ffffff"
           viewBox="0 0 256 256"
           className="w-6"
         >
@@ -43,7 +43,7 @@ function Profile({ user }) {
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
-            fill="#000000"
+            fill="#ffffff"
             viewBox="0 0 256 256"
             className="w-6"
           >
@@ -56,7 +56,7 @@ function Profile({ user }) {
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
-            fill="#000000"
+            fill="#ffffff"
             viewBox="0 0 256 256"
             className="w-6"
           >
@@ -76,12 +76,12 @@ function Profile({ user }) {
         </div>
       </div>
       <div className="px-4">
-        <h1 className="py-4 font-medium">Social Profiles</h1>
+        <h1 className="py-4 font-medium text-white">Social Profiles</h1>
         <div className="flex items-center justify-between items-center pb-4">
           <div className="flex items-center gap-4">
             <img className="w-6 h-6" src={twitter} alt="" />
             <div>
-              <h1 className="text-base font-medium">Twitter</h1>
+              <h1 className="text-base font-medium text-white">Twitter</h1>
               <h2 className="text-sm text-gray-500">Social network</h2>
             </div>
           </div>
@@ -89,7 +89,7 @@ function Profile({ user }) {
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
-            fill="#000000"
+            fill="#ffffff"
             viewBox="0 0 256 256"
             className="w-6"
           >
@@ -100,7 +100,7 @@ function Profile({ user }) {
           <div className="flex items-center gap-4">
             <img className="w-6 h-6" src={linkedin} alt="" />{" "}
             <div>
-              <h1 className="text-base font-medium">Linkedin</h1>
+              <h1 className="text-base font-medium text-white">Linkedin</h1>
               <h2 className="text-sm text-gray-500">Network Platform</h2>
             </div>
           </div>
@@ -108,7 +108,7 @@ function Profile({ user }) {
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
-            fill="#000000"
+            fill="#ffffff"
             viewBox="0 0 256 256"
             className="w-6"
           >

@@ -5,7 +5,7 @@ function Posts({ PostData }) {
         return (
           <div
             key={data._id}
-            className="bg-white  h-full pt-6 mt-6 px-6 rounded-xl text-gray-600"
+            className="bg-slate-950  h-full pt-6 mt-6 px-6 rounded-xl text-gray-600"
           >
             <div className="flex items-center gap-4 justify-between  pb-4">
               <div className="flex items-center gap-4">
@@ -15,7 +15,7 @@ function Posts({ PostData }) {
                   alt=""
                 />
                 <div>
-                  <h1 className="font-medium">{data.firstName}</h1>
+                  <h1 className="font-medium text-white">{data.firstName}</h1>
                   <h2 className="text-xs">{data.location}</h2>
                 </div>
               </div>
@@ -30,7 +30,7 @@ function Posts({ PostData }) {
               </svg>
             </div>
             <div>
-              <h2>{data.description}</h2>
+              <h2 className="text-white">{data.description}</h2>
               <img
                 className="py-4  w-full"
                 src={`http://localhost:3001/assets/${data.picturePath}`}
@@ -44,33 +44,33 @@ function Posts({ PostData }) {
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
                     height="32"
-                    fill="#000000"
+                    fill="#ffffff"
                     viewBox="0 0 256 256"
                     className="w-6"
                   >
                     <path d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"></path>
                   </svg>
-                  <h2>4</h2>
+                  <h2 className="text-white">4</h2>
                 </div>
                 <div className="flex items-center gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
                     height="32"
-                    fill="#000000"
+                    fill="#ffffff"
                     viewBox="0 0 256 256"
                     className="w-6"
                   >
                     <path d="M216,48H40A16,16,0,0,0,24,64V224a15.84,15.84,0,0,0,9.25,14.5A16.05,16.05,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78.69.69,0,0,0,.13-.11L82.5,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H82.5a16,16,0,0,0-10.3,3.75l-.12.11L40,224V64H216Z"></path>
                   </svg>
-                  <h2>6</h2>
+                  <h2 className="text-white">6</h2>
                 </div>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
-                fill="#000000"
+                fill="#ffffff"
                 viewBox="0 0 256 256"
                 className="w-6"
               >

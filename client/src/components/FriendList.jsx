@@ -2,8 +2,8 @@ import img from "../assets/OIP.jpg";
 
 function FriendList() {
   return (
-    <div className="bg-white py-6 my-6 rounded-xl px-6">
-      <h1 className="font-medium ">Friend List</h1>{" "}
+    <div className="bg-slate-950 py-6 my-6 rounded-xl px-6">
+      <h1 className="font-medium text-white">Friend List</h1>{" "}
       <div className="flex items-center gap-4  justify-between pt-6">
         <div className="flex gap-4">
           <img
@@ -12,15 +12,15 @@ function FriendList() {
             alt=""
           />
           <div>
-            <h1 className="font-medium">Shreyas M S</h1>
-            <h2 className="text-xs text-gray-500">Educator</h2>
+            <h1 className="font-medium text-white">Shreyas M S</h1>
+            <h2 className="text-xs text-gray-500 text-white">Educator</h2>
           </div>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
-          fill="#000000"
+          fill="#ffffff"
           viewBox="0 0 256 256"
           className="w-8"
         >
