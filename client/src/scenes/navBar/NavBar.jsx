@@ -2,7 +2,7 @@ function NavBar({ userName }) {
   return (
     <div className="flex justify-between py-6 px-20 bg-slate-950 ">
       <div className="flex gap-9">
-        <h1 className="text-cyan-500 font-bold text-2xl">Sociopedia</h1>
+        <h1 className="text-cyan-500 font-bold text-2xl">AmigoNet</h1>
         <div className="flex  bg-slate-200 px-4 py-1 rounded-md justify-center items-center">
           <input
             type="text"
