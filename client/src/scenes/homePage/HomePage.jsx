@@ -44,7 +44,7 @@ function HomePage() {
           <Profile user={user} />
         </div>
 
-        <div className="flex flex-col w-7/12 overflow-scroll h-screen ">
+        <div className="flex flex-col w-7/12 overflow-scroll scrollbar-hide h-screen ">
           <Post />
           <Posts PostData={PostData} />
         </div>
