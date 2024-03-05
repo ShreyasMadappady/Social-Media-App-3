@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import FriendList from "../../components/FriendList";
 import Post from "../../components/Post";
 import Posts from "../../components/Posts";
@@ -11,6 +11,7 @@ import axios from "axios";
 function HomePage() {
   const token = useSelector((state) => state.token);
   const user = useSelector((state) => state.user);
+  const [posts, setPosts] = useState();
 
   const dispatch = useDispatch();
 
@@ -33,7 +34,6 @@ function HomePage() {
   }, []);
 
   const PostData = useSelector((state) => state.posts);
-
 
   return (
     <div>

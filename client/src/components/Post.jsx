@@ -1,8 +1,34 @@
+import { useState } from "react";
 import img from "../assets/OIP.jpg";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Post() {
+  const [description, setDescription] = useState("");
+  const [picturePath, setPicturePath] = useState(null);
+
+  const user = useSelector((state) => state.user);
+  console.log(user);
+
+  const handleSubmit = async (e) => {
+    const formData = new FormData();
+    console.log(user);
+    formData.append("userId", user._id);
+    formData.append("firstName", user.firstName);
+    formData.append("lastName", user.lastName);
+    formData.append("location", user.location);
+    formData.append("description", description);
+    formData.append("picturePath", picturePath);
+    formData.append("occupation", user.occupation);
+    // for (let pair of formData.entries()) {
+    //   console.log(pair[0] + ", " + pair[1]);
+    // }
+    e.preventDefault();
+    // console.log(formData.entries());
+    await axios.post("http://localhost:3001/posts/post", formData);
+  };
   return (
-    <div className="bg-slate-950  h-5/12 pt-6 mt-6 rounded-xl text-gray-600">
+    <form className="bg-slate-950  h-5/12 pt-6 mt-6 rounded-xl text-gray-600">
       <div className="flex items-center gap-6 px-6 pb-4 border-solid border-gray-300 border-b justify-between">
         <img
           className="w-12 h-12 object-cover rounded-full "
@@ -15,10 +41,13 @@ function Post() {
           name=""
           placeholder="what's on your mind..."
           id=""
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
         />
       </div>
       <div className="flex items-center justify-between  px-6 py-3 ">
-        <div className="flex items-center text-sm">
+        {/* <div className="flex items-center text-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -54,8 +83,15 @@ function Post() {
             className="w-6"
           >
             <path d="M209.66,122.34a8,8,0,0,1,0,11.32l-82.05,82a56,56,0,0,1-79.2-79.21L147.67,35.73a40,40,0,1,1,56.61,56.55L105,193A24,24,0,1,1,71,159L154.3,74.38A8,8,0,1,1,165.7,85.6L82.39,170.31a8,8,0,1,0,11.27,11.36L192.93,81A24,24,0,1,0,159,47L59.76,147.68a40,40,0,1,0,56.53,56.62l82.06-82A8,8,0,0,1,209.66,122.34Z"></path>
-          </svg>
-          <h1 className="text-white">Attachment</h1>
+          </svg> */}
+        <input
+          type="file"
+          onChange={(e) => {
+            setPicturePath(e.target.files[0]);
+            console.log(e.target.files[0]);
+          }}
+        />
+        {/* <h1 className="text-white">Attachment</h1>
         </div>{" "}
         <div className="flex items-center text-sm">
           <svg
@@ -69,10 +105,15 @@ function Post() {
             <path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V232a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path>
           </svg>
           <h1 className="text-white">Audio</h1>
-        </div>{" "}
-        <button className="bg-cyan-400 rounded-full px-6 py-2 ">Post </button>
+        </div>{" "} */}
+        <button
+          className="bg-cyan-400 rounded-full px-6 py-2 "
+          onClick={handleSubmit}
+        >
+          Post{" "}
+        </button>
       </div>
-    </div>
+    </form>
   );
 }
 

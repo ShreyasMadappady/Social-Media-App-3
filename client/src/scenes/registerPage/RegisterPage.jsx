@@ -31,6 +31,7 @@ function RegisterPage() {
       "http://localhost:3001/auth/register",
       formData
     );
+    console.log(setData);
     if (setData) {
       navigate("/");
     }
